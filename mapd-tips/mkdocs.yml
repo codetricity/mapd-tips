@@ -3,3 +3,4 @@ theme_dir: themes/readthedocs
 theme: readthedocs
 repo_url: 'https://github.com/codetricity/mapd-tips/'
 edit_uri: 'edit/master/mapd-tips/docs/'
+google_analytics: ['UA-104410604-1', 'auto']
