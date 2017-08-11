@@ -84,6 +84,16 @@
             "location": "/#browser-access-to-mapd-visualization-projects",
             "text": "Use the browser on your workstation. For example, point Microsoft Edge \non Windows to  http://127.0.0.1/example/ .   In this workflow, you are using your Windows IDE and your Windows browser to\nedit and view the MapD Charting application running on Linux.  Once the application is ready for public testing, move it to something\nlike AWS running Linux.  For more information on Vagrant configuration and workflows, refer to\nthe  Vagrant documentaion .",
             "title": "Browser Access to MapD Visualization Projects"
+        },
+        {
+            "location": "/contributing/",
+            "text": "Contributing to MapD Community Tips\n\n\nPlease add or edit this document. Do not be shy. We're just trying to create cool things with MapD and any contribution will help.\n\n\nTo edit this document, go to the \nEdit on GitHub\n button in the upper right.\n\n\n\n\nThe community docs are on GitHub. You will need to fork the repo and submit a pull request.\n\n\n\n\nEdit the file in \nMarkdown\n.\n\n\n\n\nPropose the change. Do not back down.\nWe will be happy to hear from you. If the change\nis in error, either we'll help you to fix it or the \ncommunity will help. Press the button. Do it.\n\n\n\n\nCreate the pull request.\n\n\n\n\n\n\nChange to main document will be incorporated after a human being reviews it. Thanks.",
+            "title": "Contributing"
+        },
+        {
+            "location": "/contributing/#contributing-to-mapd-community-tips",
+            "text": "Please add or edit this document. Do not be shy. We're just trying to create cool things with MapD and any contribution will help.  To edit this document, go to the  Edit on GitHub  button in the upper right.   The community docs are on GitHub. You will need to fork the repo and submit a pull request.   Edit the file in  Markdown .   Propose the change. Do not back down.\nWe will be happy to hear from you. If the change\nis in error, either we'll help you to fix it or the \ncommunity will help. Press the button. Do it.   Create the pull request.    Change to main document will be incorporated after a human being reviews it. Thanks.",
+            "title": "Contributing to MapD Community Tips"
         }
     ]
 }
