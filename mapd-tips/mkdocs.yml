@@ -1,7 +1,5 @@
 site_name: MapD Tips and Tricks from the Community
-theme_dir: themes/mkdocs
-theme: mkdocs
-repo_name: Github
-repo_url: https://github.com/codetricity/mapd-tips/
-edit_uri: edit/master/docs/
-google_analytics: ['UA-104410604-1', 'auto']
+theme_dir: themes/readthedocs
+theme: readthedocs
+repo_url: 'https://github.com/codetricity/mapd-tips/'
+edit_uri: 'edit/master/mapd-tips/docs/'
