@@ -1,1 +1,3 @@
-# MapD Tips and Projects from the Community
+# MapD Tips from the Community
+
+https://codetricity.github.io/mapd-tips/
