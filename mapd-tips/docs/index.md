@@ -9,7 +9,7 @@ Clone the repo to your local workstation and refer to platform-specific tips.
 
 ### Overview
 
-Easiest install out of Mac, Linux, Windows. No problems with minimal installation required.
+Easy install. No problems. Very few external dependencies.
 
     npm install #downloads all dependencies and devDependencies
     npm install mapbox-gl@https://github.com/mapd/mapbox-gl-js/tarball/9c04de6949fe498c8c79f5c0627dfd6d6321f307 #downloads mapbox peer dependency
