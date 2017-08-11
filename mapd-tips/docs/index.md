@@ -1,6 +1,6 @@
 # Installing MapD Charting
 
-Clone the repo to your local workstation and refer platform-specific tips.
+Clone the repo to your local workstation and refer to platform-specific tips.
 
 [https://github.com/mapd/mapd-charting](https://github.com/mapd/mapd-charting)
 
