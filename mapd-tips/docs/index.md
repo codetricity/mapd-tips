@@ -1,4 +1,9 @@
 # Installing MapD Charting
+
+Clone the repo to your local workstation and refer platform-specific tips.
+
+[https://github.com/mapd/mapd-charting](https://github.com/mapd/mapd-charting)
+
 ## Mac OS X
 ![](img/mac-charting.png)
 

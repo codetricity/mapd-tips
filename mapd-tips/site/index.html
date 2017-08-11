@@ -55,6 +55,7 @@
             <li><a href="#mac-os-x">Mac OS X</a></li>
             <li><a href="#linux">Linux</a></li>
             <li><a href="#windows-10">Windows 10</a></li>
+            <li><a href="#vagrant-dev-containers">Vagrant Dev Containers</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -112,12 +113,62 @@ some of the scripts from either DOS or Powershell. You need to run <code>npm run
 <ul>
 <li><a href="https://medium.com/@wildcharting/mapd-charting-windows-10-install-adventures-and-tips-efc23359e20c">Windows 10 64 bit X99 architecture</a></li>
 <li><a href="https://medium.com/@wildcharting/mapd-charting-for-interactive-fun-412711a376f0">Windows 10 64 bit workstation</a></li>
-</ul></div>
+</ul>
+<h2 id="vagrant-dev-containers">Vagrant Dev Containers</h2>
+<p><img alt="" src="./img/vagrant-win.png" /></p>
+<p>Vagrant is popular with developers and people involved in DevOps. It
+allows you to install MapD Charting inside a Linux VM and use development
+tools on your workstation. For example, you can install MapD Charting on Windows 
+inside of a Linux VM and then use Visual Studio on Windows to develop a MapD 
+Charting application. </p>
+<h3 id="install-steps">Install Steps</h3>
+<ol>
+<li>Install <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
+<li>Install <a href="https://www.vagrantup.com/downloads.html">Vagrant</a></li>
+<li>Copy <a href="https://gist.github.com/codetricity/c5ec02d5d4da605dab23be89d7abc800">Vagrantfile</a> into your development folder</li>
+<li>Provision MapD Charting VM with <code>vagrant up</code></li>
+<li>ssh into VM with <code>vagrant ssh</code></li>
+<li>cd in <code>/vagrant/mapd-charting/</code> and run <code>npm run start</code></li>
+</ol>
+<h3 id="install-tips">Install Tips</h3>
+<p>On Windows, you must run the Command Prompt as Administrator.</p>
+<p><img alt="" src="./img/command-prompt.png" /></p>
+<p>After you ssh into the VM, your files will be in <code>/vagrant/mapd-charting</code>.</p>
+<p><img alt="" src="./img/vagrant-directory.png" /></p>
+<p>The install with <code>vagrant up</code> takes 10-20 minutes. The installation script will appear to
+have no movement during several sections.</p>
+<p>Cloning the mapd-charting repository took 4 minutes. There's no status report from the
+script during this stage. It will look like the screen below for 4 minutes.</p>
+<p><img alt="" src="./img/clone.png" /></p>
+<p>There will be many messages that say, <em>WARN</em>. You can fix these laters when you're 
+developing your application. The warning messages did not appear to impact the demos. The script stayed on the screen below for several minutes before moving on. There is no status update 
+during that time.</p>
+<p><img alt="" src="./img/warn.png" /></p>
+<h3 id="accessing-linux-files-from-windows">Accessing Linux Files from Windows</h3>
+<p>Files placed in <code>/vagrant/</code> inside the Linux VM will be visible from
+inside the Windows directory you started Vagrant from.</p>
+<p><img alt="" src="./img/windows-files.png" /></p>
+<p>You can now open your MapD Project folder in an IDE such as 
+Visual Studio 2017.</p>
+<p><img alt="" src="./img/visual-studio.png" /></p>
+<h3 id="browser-access-to-mapd-visualization-projects">Browser Access to MapD Visualization Projects</h3>
+<p>Use the browser on your workstation. For example, point Microsoft Edge 
+on Windows to <code>http://127.0.0.1/example/</code>.</p>
+<p><img alt="" src="./img/ie.png" /></p>
+<p>In this workflow, you are using your Windows IDE and your Windows browser to
+edit and view the MapD Charting application running on Linux.</p>
+<p>Once the application is ready for public testing, move it to something
+like AWS running Linux.</p>
+<p>For more information on Vagrant configuration and workflows, refer to
+the <a href="https://www.vagrantup.com/docs/index.html">Vagrant documentaion</a>.</p></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
             <!-- <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p> -->
+            <p>Amazingly incredible community documentation crafted by 
+              <a href="http://oppkey.com">Oppkey </a> and the 
+              <a href="https://community.mapd.com/">MapD Community</a></p>
         </footer>
         <script>var base_url = '.';</script>
         <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
@@ -151,5 +202,5 @@ some of the scripts from either DOS or Powershell. You need to run <code>npm run
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-08-10 19:15:25
+Build Date UTC : 2017-08-11 01:13:57
 -->
