@@ -136,3 +136,107 @@ like AWS running Linux.
 
 For more information on Vagrant configuration and workflows, refer to
 the [Vagrant documentaion](https://www.vagrantup.com/docs/index.html).
+
+## Windows Subsystem for Linux
+
+Microsoft designed their Windows Subsystem for Linux for with web developers working on server side applications. This method avoids the 
+performance hit of a VM and allows you to install MapD Charting using  Ubuntu 16.04 applications that talk to the Windows kernel.
+
+### Prerequisites
+
+- Windows 10 64 bit
+- Developer Mode enabled
+- Windows Subsystem for Linux — Install guide from Microsoft
+
+At the Command Prompt, type *bash*.
+
+![](img/wsl/bash.png)
+
+> Note: if you don’t see a bash shell, go back and read the WSL install guide from Microsoft. There are also some tips at the end of this article.
+
+cd into a development folder you can access from Windows.
+
+clone mapd-charting repo into your development folder with
+
+    git clone https://github.com/mapd/mapd-charting.git
+
+Install npm with 
+
+    sudo apt-get install npm
+
+![](img/wsl/npm-install.png)
+
+install `n` using npm.
+
+![](img/wsl/n.png)
+
+
+![](img/wsl/clone.png)
+
+Although your experience may be different, I had some problems with 
+permissions when I tried to use `n` to install node 5.12. To solve this,
+ I used bash as root temporarily to install a specific version of node with n.
+When I do the install, I’m going to include `n` in the `PATH`.
+
+![](img/wsl/bash-sudo.png)
+
+> NOTE: /mnt/e/Development/ is the directory of my Windows E: drive that I do development in. /node_modules is the folder that npm installed n into. 
+
+Install node 5.12 with this command:
+
+    n 5.12
+
+![](img/wsl/node-5-12.png)
+
+Exit bash running as root.
+
+![](img/wsl/bash-exit.png)
+
+`cd` into `mapd-charting` and install it with npm.
+
+    npm install
+
+![](img/wsl/mapd-install.png)
+
+There will be a few warnings. This is fine. After the install finishes, install the peer dependency in 
+`mapbox-gl-js`.
+
+![](img/wsl/mapd-peer.png)
+
+    npm install mapbox-gl@https://github.com/mapd/mapbox-gl-js/tarball/9c04de6949fe498c8c79f5c0627dfd6d6321f307
+
+![](img/wsl/warn.png)
+
+![](img/wsl/install-finish.png)
+
+Start the MapD Charting demos with:
+
+    npm run start
+
+![](img/wsl/npm-run-start.png)
+
+
+You can now access the demos from your web browser:
+
+http://127.0.0.1:8081/example/
+
+![](img/wsl/demo-browser.png)
+
+Open up an editor like VS Code, Atom, or Sublime and start editing the demos to get more 
+familiar with the [MapD Charting API](https://mapd.github.io/mapd-charting/docs/).
+
+![](img/wsl/mapd-vscode.png)
+
+### Additional Install Information
+I’m installing Windows Subsystem for Linux from Powershell, not from the Microsoft store.
+
+Set your computer to *Developer Mode*.
+
+![](img/wsl/developer-mode.png)
+
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+Run bash at the command prompt. It will install Windows Subsystem for Linux.
+
+
+![](img/wsl/cmd-bash.png)
