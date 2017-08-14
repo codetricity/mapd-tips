@@ -146,7 +146,7 @@ performance hit of a VM and allows you to install MapD Charting using  Ubuntu 16
 
 - Windows 10 64 bit
 - Developer Mode enabled
-- Windows Subsystem for Linux — Install guide from Microsoft
+- Windows Subsystem for Linux — [Install guide from Microsoft](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
 
 At the Command Prompt, type *bash*.
 

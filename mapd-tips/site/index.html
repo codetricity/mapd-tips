@@ -74,6 +74,8 @@
         
             <li><a class="toctree-l3" href="#vagrant-dev-containers">Vagrant Dev Containers</a></li>
         
+            <li><a class="toctree-l3" href="#windows-subsystem-for-linux">Windows Subsystem for Linux</a></li>
+        
         </ul>
     
 
@@ -223,6 +225,74 @@ edit and view the MapD Charting application running on Linux.</p>
 like AWS running Linux.</p>
 <p>For more information on Vagrant configuration and workflows, refer to
 the <a href="https://www.vagrantup.com/docs/index.html">Vagrant documentaion</a>.</p>
+<h2 id="windows-subsystem-for-linux">Windows Subsystem for Linux</h2>
+<p>Microsoft designed their Windows Subsystem for Linux for with web developers working on server side applications. This method avoids the 
+performance hit of a VM and allows you to install MapD Charting using  Ubuntu 16.04 applications that talk to the Windows kernel.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Windows 10 64 bit</li>
+<li>Developer Mode enabled</li>
+<li>Windows Subsystem for Linux — Install guide from Microsoft</li>
+</ul>
+<p>At the Command Prompt, type <em>bash</em>.</p>
+<p><img alt="" src="./img/wsl/bash.png" /></p>
+<blockquote>
+<p>Note: if you don’t see a bash shell, go back and read the WSL install guide from Microsoft. There are also some tips at the end of this article.</p>
+</blockquote>
+<p>cd into a development folder you can access from Windows.</p>
+<p>clone mapd-charting repo into your development folder with</p>
+<pre><code>git clone https://github.com/mapd/mapd-charting.git
+</code></pre>
+<p>Install npm with </p>
+<pre><code>sudo apt-get install npm
+</code></pre>
+<p><img alt="" src="./img/wsl/npm-install.png" /></p>
+<p>install <code>n</code> using npm.</p>
+<p><img alt="" src="./img/wsl/n.png" /></p>
+<p><img alt="" src="./img/wsl/clone.png" /></p>
+<p>Although your experience may be different, I had some problems with 
+permissions when I tried to use <code>n</code> to install node 5.12. To solve this,
+ I used bash as root temporarily to install a specific version of node with n.
+When I do the install, I’m going to include <code>n</code> in the <code>PATH</code>.</p>
+<p><img alt="" src="./img/wsl/bash-sudo.png" /></p>
+<blockquote>
+<p>NOTE: /mnt/e/Development/ is the directory of my Windows E: drive that I do development in. /node_modules is the folder that npm installed n into. </p>
+</blockquote>
+<p>Install node 5.12 with this command:</p>
+<pre><code>n 5.12
+</code></pre>
+<p><img alt="" src="./img/wsl/node-5-12.png" /></p>
+<p>Exit bash running as root.</p>
+<p><img alt="" src="./img/wsl/bash-exit.png" /></p>
+<p><code>cd</code> into <code>mapd-charting</code> and install it with npm.</p>
+<pre><code>npm install
+</code></pre>
+<p><img alt="" src="./img/wsl/mapd-install.png" /></p>
+<p>There will be a few warnings. This is fine. After the install finishes, install the peer dependency in 
+<code>mapbox-gl-js</code>.</p>
+<p><img alt="" src="./img/wsl/mapd-peer.png" /></p>
+<pre><code>npm install mapbox-gl@https://github.com/mapd/mapbox-gl-js/tarball/9c04de6949fe498c8c79f5c0627dfd6d6321f307
+</code></pre>
+<p><img alt="" src="./img/wsl/warn.png" /></p>
+<p><img alt="" src="./img/wsl/install-finish.png" /></p>
+<p>Start the MapD Charting demos with:</p>
+<pre><code>npm run start
+</code></pre>
+<p><img alt="" src="./img/wsl/npm-run-start.png" /></p>
+<p>You can now access the demos from your web browser:</p>
+<p>http://127.0.0.1:8081/example/</p>
+<p><img alt="" src="./img/wsl/demo-browser.png" /></p>
+<p>Open up an editor like VS Code, Atom, or Sublime and start editing the demos to get more 
+familiar with the <a href="https://mapd.github.io/mapd-charting/docs/">MapD Charting API</a>.</p>
+<p><img alt="" src="./img/wsl/mapd-vscode.png" /></p>
+<h3 id="additional-install-information">Additional Install Information</h3>
+<p>I’m installing Windows Subsystem for Linux from Powershell, not from the Microsoft store.</p>
+<p>Set your computer to <em>Developer Mode</em>.</p>
+<p><img alt="" src="./img/wsl/developer-mode.png" /></p>
+<pre><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</code></pre>
+<p>Run bash at the command prompt. It will install Windows Subsystem for Linux.</p>
+<p><img alt="" src="./img/wsl/cmd-bash.png" /></p>
               
             </div>
           </div>
@@ -273,5 +343,5 @@ the <a href="https://www.vagrantup.com/docs/index.html">Vagrant documentaion</a>
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-08-11 17:27:37
+Build Date UTC : 2017-08-14 18:28:04
 -->
